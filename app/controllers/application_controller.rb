@@ -1,5 +1,5 @@
 require './config/environment'
-require './app/models/sample_model'
+require './app/models/item'
 
 class ApplicationController < Sinatra::Base
   configure do
@@ -8,7 +8,13 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    @items = Item.all
     erb :index
+  end
+
+  post '/new' do
+    Item.create(name: params[:name], color:params[:color])
+    redirect to '/'
   end
 
 end

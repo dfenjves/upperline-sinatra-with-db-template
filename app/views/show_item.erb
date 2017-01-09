@@ -1,6 +1,6 @@
 <h1> Your Item is <%= @item.name %> and it is <%= @item.color %> </h1>
 
-<a href="#">Edit this Item</a>
-<a href="#">Delete this Item</a>
+<a href="/items/<%= @item.id %>/edit">Edit this Item</a>
+<a href="/items/<%= @item.id %>/delete">Delete this Item</a>
 
 <a href="/items"> Back to Items </a>

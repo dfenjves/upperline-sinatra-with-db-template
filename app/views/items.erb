@@ -3,7 +3,7 @@
 <ul>
   <% if @items %>
     <% @items.each do |item| %>
-      <li><a href="/items/<%=item.id%>"><%= item.name %> - <%= item.color %></a></li>
+      <li><a href="/items/<%= item.id %>"><%= item.name %> - <%= item.color %></a></li>
     <% end %>
   <% end %>
 </ul>

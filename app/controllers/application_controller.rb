@@ -7,14 +7,23 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  get '/' do
+  get '/items' do
     @items = Item.all
-    erb :index
+    erb :items
   end
 
-  post '/new' do
+  get '/items/new' do
+    erb :new_item
+  end
+
+  post '/items' do
     Item.create(name: params[:name], color:params[:color])
-    redirect to '/'
+    redirect to '/items'
+  end
+
+  get "/items/:id" do
+    @item = Item.find(params[:id])
+    erb :show_item
   end
 
 end

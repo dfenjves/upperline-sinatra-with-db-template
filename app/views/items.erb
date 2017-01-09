@@ -1,0 +1,11 @@
+<h1> Items </h1>
+
+<ul>
+  <% if @items %>
+    <% @items.each do |item| %>
+      <li><a href="/items/<%=item.id%>"><%= item.name %> - <%= item.color %></a></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<a href="items/new">Create a New Item</a>
